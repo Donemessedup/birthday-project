@@ -10,11 +10,14 @@
 		23777DBA2574750B004DC36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23777DB92574750B004DC36B /* AppDelegate.swift */; };
 		23777DBC2574750B004DC36B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23777DBB2574750B004DC36B /* SceneDelegate.swift */; };
 		23777DBE2574750B004DC36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23777DBD2574750B004DC36B /* ViewController.swift */; };
-		23777DC12574750B004DC36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23777DBF2574750B004DC36B /* Main.storyboard */; };
 		23777DC42574750B004DC36B /* BirthdayList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23777DC22574750B004DC36B /* BirthdayList.xcdatamodeld */; };
 		23777DC62574750C004DC36B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23777DC52574750C004DC36B /* Assets.xcassets */; };
 		23777DC92574750C004DC36B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23777DC72574750C004DC36B /* LaunchScreen.storyboard */; };
 		23777DD225747F09004DC36B /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23777DD125747F09004DC36B /* Interest.swift */; };
+		5929E9D7257481510023AE2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5929E9D6257481510023AE2F /* Main.storyboard */; };
+		5929E9DB257481B20023AE2F /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E9DA257481B20023AE2F /* TripTableViewCell.swift */; };
+		5929E9DE257481B90023AE2F /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E9DD257481B90023AE2F /* PersonDetailViewController.swift */; };
+		5929E9E1257481C00023AE2F /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E9E0257481C00023AE2F /* AddPersonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +25,15 @@
 		23777DB92574750B004DC36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23777DBB2574750B004DC36B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		23777DBD2574750B004DC36B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		23777DC02574750B004DC36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23777DC32574750B004DC36B /* BirthdayList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BirthdayList.xcdatamodel; sourceTree = "<group>"; };
 		23777DC52574750C004DC36B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23777DC82574750C004DC36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23777DCA2574750C004DC36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23777DD125747F09004DC36B /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
+		5929E9D6257481510023AE2F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5929E9DA257481B20023AE2F /* TripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		5929E9DD257481B90023AE2F /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		5929E9E0257481C00023AE2F /* AddPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +69,15 @@
 				23777DB92574750B004DC36B /* AppDelegate.swift */,
 				23777DBB2574750B004DC36B /* SceneDelegate.swift */,
 				23777DBD2574750B004DC36B /* ViewController.swift */,
-				23777DBF2574750B004DC36B /* Main.storyboard */,
+				5929E9D6257481510023AE2F /* Main.storyboard */,
 				23777DC52574750C004DC36B /* Assets.xcassets */,
 				23777DC72574750C004DC36B /* LaunchScreen.storyboard */,
 				23777DCA2574750C004DC36B /* Info.plist */,
 				23777DC22574750B004DC36B /* BirthdayList.xcdatamodeld */,
 				23777DD125747F09004DC36B /* Interest.swift */,
+				5929E9DA257481B20023AE2F /* TripTableViewCell.swift */,
+				5929E9DD257481B90023AE2F /* PersonDetailViewController.swift */,
+				5929E9E0257481C00023AE2F /* AddPersonViewController.swift */,
 			);
 			path = BirthdayList;
 			sourceTree = "<group>";
@@ -132,7 +141,7 @@
 			files = (
 				23777DC92574750C004DC36B /* LaunchScreen.storyboard in Resources */,
 				23777DC62574750C004DC36B /* Assets.xcassets in Resources */,
-				23777DC12574750B004DC36B /* Main.storyboard in Resources */,
+				5929E9D7257481510023AE2F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,9 +152,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5929E9DB257481B20023AE2F /* TripTableViewCell.swift in Sources */,
+				5929E9DE257481B90023AE2F /* PersonDetailViewController.swift in Sources */,
 				23777DC42574750B004DC36B /* BirthdayList.xcdatamodeld in Sources */,
 				23777DBE2574750B004DC36B /* ViewController.swift in Sources */,
 				23777DBA2574750B004DC36B /* AppDelegate.swift in Sources */,
+				5929E9E1257481C00023AE2F /* AddPersonViewController.swift in Sources */,
 				23777DBC2574750B004DC36B /* SceneDelegate.swift in Sources */,
 				23777DD225747F09004DC36B /* Interest.swift in Sources */,
 			);
@@ -154,14 +166,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		23777DBF2574750B004DC36B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				23777DC02574750B004DC36B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		23777DC72574750C004DC36B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
