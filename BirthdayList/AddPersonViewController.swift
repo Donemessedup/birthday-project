@@ -36,7 +36,6 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tripNumLabel.text = "Add Trip #" + String(tripNum)
         alert.addAction(continueAction)
         startDateAlert.addAction(continueAction)
         endDateAlert.addAction(continueAction)
