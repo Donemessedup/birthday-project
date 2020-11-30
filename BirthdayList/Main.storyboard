@@ -202,43 +202,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wWW-rD-SkH">
-                                <rect key="frame" x="16" y="132.5" width="95.5" height="77.5"/>
+                                <rect key="frame" x="16" y="132.5" width="73" height="49"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-eu-CDc">
-                                        <rect key="frame" x="0.0" y="0.0" width="95.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-eu-CDc">
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBe-9i-393">
-                                        <rect key="frame" x="0.0" y="28.5" width="95.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeV-SR-25X">
-                                        <rect key="frame" x="0.0" y="57" width="95.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBe-9i-393">
+                                        <rect key="frame" x="0.0" y="28.5" width="73" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="duW-NG-x4o">
-                                <rect key="frame" x="16" y="410" width="382" height="436"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="436" id="U9F-r5-oWC"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yzz-Sd-zvI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="13s-XT-N6F" firstAttribute="top" secondItem="Yzz-Sd-zvI" secondAttribute="top" constant="16" id="6oK-4i-YcG"/>
-                            <constraint firstItem="Yzz-Sd-zvI" firstAttribute="bottom" secondItem="duW-NG-x4o" secondAttribute="bottom" constant="16" id="CAG-C6-4g4"/>
-                            <constraint firstItem="Yzz-Sd-zvI" firstAttribute="trailing" secondItem="duW-NG-x4o" secondAttribute="trailing" constant="16" id="EGM-Xw-e0w"/>
                             <constraint firstItem="13s-XT-N6F" firstAttribute="top" secondItem="Yzz-Sd-zvI" secondAttribute="top" constant="16" id="PvY-v9-foy"/>
-                            <constraint firstItem="duW-NG-x4o" firstAttribute="leading" secondItem="Yzz-Sd-zvI" secondAttribute="leading" constant="16" id="Tbk-6G-pTy"/>
                             <constraint firstItem="Yzz-Sd-zvI" firstAttribute="trailing" secondItem="13s-XT-N6F" secondAttribute="trailing" constant="16" id="bN0-Lp-TlE"/>
                             <constraint firstItem="wWW-rD-SkH" firstAttribute="leading" secondItem="Yzz-Sd-zvI" secondAttribute="leading" constant="16" id="cOW-me-Z0k"/>
                             <constraint firstItem="wWW-rD-SkH" firstAttribute="top" secondItem="13s-XT-N6F" secondAttribute="bottom" constant="8" id="loP-wR-7ee"/>
@@ -248,9 +233,7 @@
                     <navigationItem key="navigationItem" id="x8i-J0-PdU"/>
                     <connections>
                         <outlet property="destLabel" destination="tcJ-eu-CDc" id="iXE-op-GkT"/>
-                        <outlet property="endDateLabel" destination="jeV-SR-25X" id="hdq-x7-XjO"/>
                         <outlet property="startDateLabel" destination="XBe-9i-393" id="MqX-mS-0Yd"/>
-                        <outlet property="tripImageView" destination="duW-NG-x4o" id="4GC-dp-8sI"/>
                         <outlet property="tripNumLabel" destination="13s-XT-N6F" id="0Xd-eK-u97"/>
                     </connections>
                 </viewController>
