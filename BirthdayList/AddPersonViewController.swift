@@ -15,7 +15,7 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let dateFormatter = DateFormatter()
-    var tripOptional: Trip? = nil
+    var friendOptional: Friend? = nil
     var tripNum: Int = 1
     let alert = UIAlertController(title: "Error", message: "Missing destination", preferredStyle: .alert)
     let startDateAlert = UIAlertController(title: "Error", message: "Invalid start date", preferredStyle: .alert)
@@ -61,109 +61,33 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        tripOptional = Trip(context: self.context)
+        friendOptional = Friend(context: self.context)
         dateFormatter.dateFormat = "MM/dd/yyyy"
             if let identifier = segue.identifier {
                 if identifier == "SaveUnwindSegue" {
-                    if let dest = destTextField.text, let startDate = dateFormatter.date(from: startTextField.text ?? "Unknown"), let endDate = dateFormatter.date(from: endTextField.text ?? "Unknown") {
+                    if let dest = destTextField.text, let birthDate = dateFormatter.date(from: startTextField.text ?? "Unknown"){
                         if allCorrect {
-                            if let trip = tripOptional {
-                                trip.destinationName = dest
-                                trip.startDate = startDate
-                                trip.endDate = endDate
-                                trip.imageFileName = nil
-                                if imageAdded == true {
-                                    writeImage()
-                                    trip.imageFileName = imageFileName
-                                }
-                                saveTrip()
+                            if let friend = friendOptional {
+                                friend.name = dest
+                                friend.birthday = birthDate
+                            }
+                                saveFriend()
                         }
                     }
                 }
             }
         }
-    }
 /*checks if all input is valid, if not then displays an alert
  */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        checkDest()
         if allCorrect {
             return true
         }
         return false
     }
-    func checkDest(){
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        let startDate = dateFormatter.date(from: startTextField.text ?? "Unknown")
-        let endDate = dateFormatter.date(from: endTextField.text ?? "Unknown")
-        if destTextField.text == "" {
-            present(alert,animated: true)
-            allCorrect = false
-            return
-        }
-        if startDate == nil {
-            present(startDateAlert, animated: true)
-            allCorrect = false
-            return
-        }
-        if endDate == nil {
-            present(endDateAlert, animated: true)
-            allCorrect = false
-            return
-       }
-
-        allCorrect = true
-    }
-/*
-     When the AddImage button is pressed, an alert is presented which will have a combination of the three actions depending on the device thaqt the user has
-     */
-    @IBAction func addImageButtonPressed(_ sender: UIButton) {
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary)
-        {
-            let libraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: { (_) in
-                imagePicker.sourceType = .photoLibrary
-            })
-            addImageAlert.addAction(libraryAction)
-        }
-        if UIImagePickerController.isSourceTypeAvailable(.camera)
-        {
-            let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { (_) in
-                imagePicker.sourceType = .camera
-            })
-            addImageAlert.addAction(cameraAction)
-        }
-        present(imagePicker, animated: true)
-        present(addImageAlert, animated: true)
-    }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        imageView.image = image
 
-        imagePickerControllerDidCancel(picker)
-        imageAdded = true
-        imageFileName = "\(UUID().uuidString).jpg"
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-/*
-     Writes the image path to disk
-     */
-    func writeImage() {
-        let imagePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(imageFileName)
-        if let jpegData = image!.jpegData(compressionQuality: 1) {
-            try? jpegData.write(to: imagePath)
-        }
-        print(imagePath)
-    }
-
-    func saveTrip() {
+    func saveFriend() {
         // we want to save the context "to disk" (db)
         do {
             try context.save() // like git commit

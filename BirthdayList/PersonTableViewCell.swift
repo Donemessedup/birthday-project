@@ -25,13 +25,11 @@ class PersonTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func update(with trip: Friend) {
+    func update(with friend: Friend) {
         dateFormatter.dateFormat = "MM/dd/yyyy"
-        destLabel.text = trip.destinationName
-        if let startDate = trip.startDate as Date? {
-            if let endDate = trip.endDate as Date? {
-                dateLabel.text = "\(dateFormatter.string(from: startDate)) - \(dateFormatter.string(from: endDate))"
-            }
+        destLabel.text = friend.name
+        if let birthDate = friend.birthday as Date? {
+            dateLabel.text = "\(dateFormatter.string(from: birthDate))"
         }
 
 

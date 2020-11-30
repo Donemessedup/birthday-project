@@ -12,15 +12,14 @@ import UIKit
 
 class PersonDetailViewController: UIViewController {
     let dateFormatter = DateFormatter()
-    var tripOptional: Trip? = nil
+    var friendOptional: Friend? = nil
     var totalNumTrips: Int = 0
-    var tripIndex: Int = 0
+    var friendIndex: Int = 0
     
-    @IBOutlet var tripNumLabel: UILabel!
     @IBOutlet var destLabel: UILabel!
     @IBOutlet var startDateLabel: UILabel!
-    @IBOutlet var endDateLabel: UILabel!
-    @IBOutlet var tripImageView: UIImageView!
+
+   
     
     
     override func viewDidLoad() {
@@ -31,23 +30,13 @@ class PersonDetailViewController: UIViewController {
 //displays the name, dates ,and image of the trip
     func displayTrip() {
         dateFormatter.dateFormat = "MM/dd/yyyy"
-        if let trip = tripOptional, let destName = trip.destinationName, let startDate = trip.startDate, let endDate = trip.endDate {
-            tripNumLabel.text = "Trip " + String(tripIndex) + " of " + String(totalNumTrips)
-            destLabel.text = "Destination: " + destName
+        if let friend = friendOptional, let personName = friend.name, let birthDate = friend.birthday {
+            destLabel.text = "Name: " + personName
 
-            if let startDate = startDate as Date? {
-                startDateLabel.text = "Start Date: \(dateFormatter.string(from: startDate))"
+            if let bDate = birthDate as Date? {
+                startDateLabel.text = "Start Date: \(dateFormatter.string(from: bDate))"
             }
-            if let endDate = endDate as Date? {
-                endDateLabel.text = "End Date: \(dateFormatter.string(from: endDate))"
-            }
-//            tripImageView.image = UIImage(named: trip.imageFileName ?? "")
-            let imageFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(trip.imageFileName ?? "")
-            
-
-            tripImageView.image = UIImage(contentsOfFile: imageFile.path)
-
         }
-    }
 
+    }
 }

@@ -34,7 +34,7 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
         // Do any additional setup after loading the view.
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         print(documentsDirectoryURL)
-        loadTrips()
+        loadFriends()
 
     }
     
@@ -42,18 +42,18 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return trips.count
+            return friends.count
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
-        let trip = trips[row]
+        let friend = friends[row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as! PersonTableViewCell
         
-        cell.update(with: trip)
+        cell.update(with: friend)
         
         cell.showsReorderControl = true
         
@@ -61,8 +61,8 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let trip = trips.remove(at: sourceIndexPath.row)
-        trips.insert(trip, at: destinationIndexPath.row)
+        let friend = friends.remove(at: sourceIndexPath.row)
+        friends.insert(friend, at: destinationIndexPath.row)
         
         tableView.reloadData()
     }
@@ -71,12 +71,12 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            trips.remove(at: indexPath.row)
+            friends.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            context.delete(trips[indexPath.row])
+            context.delete(friends[indexPath.row])
             
             // persist the deletion by saving the context
-            saveTrips()
+            saveFriends()
         }
     }
     
@@ -88,10 +88,10 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
                     // we need to get the trip at the row
                     // pass the trip into detailDetailVC
                     if let indexPath = tableView.indexPathForSelectedRow {
-                        let trip = trips[indexPath.row]
-                        personDetailVC.totalNumTrips = trips.count
-                        personDetailVC.tripIndex = indexPath.row + 1
-                        personDetailVC.tripOptional = trip
+                        let friend = friends[indexPath.row]
+                        personDetailVC.totalNumTrips = friends.count
+                        personDetailVC.friendIndex = indexPath.row + 1
+                        personDetailVC.friendOptional = friend
                     }
                 }
             }
@@ -99,7 +99,7 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
                 if let addPersonVC = segue.destination as? AddPersonViewController {
                     if let indexPath = tableView.indexPathForSelectedRow {
                         tableView.deselectRow(at: indexPath, animated: true)
-                        addPersonVC.tripNum = trips.count + 1
+                        addPersonVC.tripNum = friends.count + 1
                     }
                 }
             }
@@ -113,15 +113,15 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
                     if let trip = addPersonVC.tripOptional {
                         // get the currently selected index path
                         if let indexPath = tableView.indexPathForSelectedRow {
-                            trips[indexPath.row] = trip
+                            friends[indexPath.row] = trip
                         }
                         else {
                             // we are undwinding from an AddSegue
                             
-                            trips.append(trip)
+                            friends.append(trip)
                         }
                         // force update the table view
-                        self.saveTrips()
+                        self.saveFriends()
                         tableView.reloadData()
                     }
                 }
@@ -135,14 +135,14 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
        }
     
     // READ of CRUD
-    func loadTrips() {
+    func loadFriends() {
         // we need to make a "request" to get the Category objects
         // via the persistent container
-        let request: NSFetchRequest<Trip> = Trip.fetchRequest()
+        let request: NSFetchRequest<Friend> = Friend.fetchRequest()
         // with a sql SELECT statement we usually specify a WHERE clause if we want to filter rows from the table we are selecting from
         // if we want to filter, we need to add a "predicate" to our request... we will do this later for Items
         do {
-            trips = try context.fetch(request)
+            friends = try context.fetch(request)
         }
         catch {
             print("Error loading categories \(error)")
@@ -150,7 +150,7 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.reloadData()
     }
     
-    func saveTrips() {
+    func saveFriends() {
         // we want to save the context "to disk" (db)
         do {
             try context.save() // like git commit

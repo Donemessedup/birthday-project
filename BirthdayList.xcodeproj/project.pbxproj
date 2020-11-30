@@ -72,9 +72,9 @@
 			children = (
 				5929E9D6257481510023AE2F /* Main.storyboard */,
 				5929E9DA257481B20023AE2F /* PersonTableViewCell.swift */,
+				23777DBD2574750B004DC36B /* BdayTableViewController.swift */,
 				5929E9DD257481B90023AE2F /* PersonDetailViewController.swift */,
 				5929E9E0257481C00023AE2F /* AddPersonViewController.swift */,
-				23777DBD2574750B004DC36B /* BdayTableViewController.swift */,
 				23777DD125747F09004DC36B /* Interest.swift */,
 				23777DC72574750C004DC36B /* LaunchScreen.storyboard */,
 				23777DC22574750B004DC36B /* BirthdayList.xcdatamodeld */,
