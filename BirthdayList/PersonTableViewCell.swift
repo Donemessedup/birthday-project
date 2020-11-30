@@ -28,25 +28,12 @@ class PersonTableViewCell: UITableViewCell {
     func update(with trip: Friend) {
         dateFormatter.dateFormat = "MM/dd/yyyy"
         destLabel.text = trip.destinationName
-//        dateLabel.text = dateFormatter.string(from: trip.startDate) + " - " + dateFormatter.string(from: trip.endDate)
         if let startDate = trip.startDate as Date? {
             if let endDate = trip.endDate as Date? {
                 dateLabel.text = "\(dateFormatter.string(from: startDate)) - \(dateFormatter.string(from: endDate))"
             }
         }
 
-//        let imageFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(trip.imageFileName ?? "")
-//
-//        do {
-//            tripImageView.image = UIImage(contentsOfFile: try String(contentsOf: imageFile))
-//        }
-//        catch {
-//            print("Error \(error)")
-//        }
 
-        let imageFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(trip.imageFileName ?? "")
-        
-
-        tripImageView.image = UIImage(contentsOfFile: imageFile.path)
     }
 }

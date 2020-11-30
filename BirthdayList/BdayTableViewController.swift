@@ -23,7 +23,7 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let dateFormatter = DateFormatter()
-    var trips = [Trip]()
+    var friends = [Friend]()
     
     
     @IBOutlet var tableView: UITableView!
