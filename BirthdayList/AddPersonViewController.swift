@@ -27,13 +27,9 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
     var imageFileName = ""
     var image: UIImage? = nil
     
-    @IBOutlet var tripNumLabel: UILabel!
-    @IBOutlet var destTextField: UITextField!
-    @IBOutlet var startTextField: UITextField!
-    @IBOutlet var endTextField: UITextField!
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var birthDateTextField: UITextField!
     @IBOutlet var saveButton: UIButton!
-    @IBOutlet var addImageButton: UIButton!
-    @IBOutlet var imageView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -51,9 +47,8 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
 /*dismisses thew keyboard when the background is tapped */
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         print("background tapped")
-        destTextField.resignFirstResponder()
-        startTextField.resignFirstResponder()
-        endTextField.resignFirstResponder()
+        nameTextField.resignFirstResponder()
+        birthDateTextField.resignFirstResponder()
     }
 /*
  Creates and saves the new trip if all inpiut fields are valid
@@ -65,10 +60,10 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
         dateFormatter.dateFormat = "MM/dd/yyyy"
             if let identifier = segue.identifier {
                 if identifier == "SaveUnwindSegue" {
-                    if let dest = destTextField.text, let birthDate = dateFormatter.date(from: startTextField.text ?? "Unknown"){
+                    if let name = nameTextField.text, let birthDate = dateFormatter.date(from: birthDateTextField.text ?? "Unknown"){
                         if allCorrect {
                             if let friend = friendOptional {
-                                friend.name = dest
+                                friend.name = name
                                 friend.birthday = birthDate
                             }
                                 saveFriend()
