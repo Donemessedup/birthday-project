@@ -18,7 +18,7 @@
 import UIKit
 import CoreData
 
-class TripTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class BdayTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -51,7 +51,7 @@ class TripTableViewController: UIViewController, UITableViewDataSource, UITableV
         let row = indexPath.row
         let trip = trips[row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TripCell", for: indexPath) as! TripTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as! PersonTableViewCell
         
         cell.update(with: trip)
         
@@ -83,23 +83,23 @@ class TripTableViewController: UIViewController, UITableViewDataSource, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "DetailSegue" {
-                if let tripDetailVC = segue.destination as? PersonDetailViewController {
+                if let personDetailVC = segue.destination as? PersonDetailViewController {
                     // we need to get the indexPath for the row the user clicked on
                     // we need to get the trip at the row
                     // pass the trip into detailDetailVC
                     if let indexPath = tableView.indexPathForSelectedRow {
                         let trip = trips[indexPath.row]
-                        tripDetailVC.totalNumTrips = trips.count
-                        tripDetailVC.tripIndex = indexPath.row + 1
-                        tripDetailVC.tripOptional = trip
+                        personDetailVC.totalNumTrips = trips.count
+                        personDetailVC.tripIndex = indexPath.row + 1
+                        personDetailVC.tripOptional = trip
                     }
                 }
             }
             else if identifier == "AddSegue" {
-                if let addTriplVC = segue.destination as? AddPersonViewController {
+                if let addPersonVC = segue.destination as? AddPersonViewController {
                     if let indexPath = tableView.indexPathForSelectedRow {
                         tableView.deselectRow(at: indexPath, animated: true)
-                        addTriplVC.tripNum = trips.count + 1
+                        addPersonVC.tripNum = trips.count + 1
                     }
                 }
             }
@@ -109,8 +109,8 @@ class TripTableViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func unwindToTripTableViewController(segue: UIStoryboardSegue) {
         if let identifier = segue.identifier {
             if identifier == "SaveUnwindSegue" {
-                if let addTripVC = segue.source as? AddPersonViewController {
-                    if let trip = addTripVC.tripOptional {
+                if let addPersonVC = segue.source as? AddPersonViewController {
+                    if let trip = addPersonVC.tripOptional {
                         // get the currently selected index path
                         if let indexPath = tableView.indexPathForSelectedRow {
                             trips[indexPath.row] = trip

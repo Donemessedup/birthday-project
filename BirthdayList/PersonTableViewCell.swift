@@ -10,7 +10,7 @@
 
 import UIKit
 
-class TripTableViewCell: UITableViewCell {
+class PersonTableViewCell: UITableViewCell {
     let dateFormatter = DateFormatter()
     @IBOutlet var destLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
@@ -25,7 +25,7 @@ class TripTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func update(with trip: Trip) {
+    func update(with trip: Friend) {
         dateFormatter.dateFormat = "MM/dd/yyyy"
         destLabel.text = trip.destinationName
 //        dateLabel.text = dateFormatter.string(from: trip.startDate) + " - " + dateFormatter.string(from: trip.endDate)
