@@ -17,7 +17,7 @@ extension Friend {
     }
 
     @NSManaged public var birthday: Date?
-    @NSManaged public var interests: [Interest]?
+    @NSManaged public var interests: String?
     @NSManaged public var name: String?
 
 }
