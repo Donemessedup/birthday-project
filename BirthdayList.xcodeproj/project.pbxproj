@@ -20,6 +20,7 @@
 		5929E9E1257481C00023AE2F /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E9E0257481C00023AE2F /* AddPersonViewController.swift */; };
 		5929E9E8257486DA0023AE2F /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E9E6257486DA0023AE2F /* Friend+CoreDataClass.swift */; };
 		5929E9E9257486DA0023AE2F /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E9E7257486DA0023AE2F /* Friend+CoreDataProperties.swift */; };
+		59649AE52575D23B006C7F23 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59649AE42575D23B006C7F23 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5929E9E0257481C00023AE2F /* AddPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		5929E9E6257486DA0023AE2F /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		5929E9E7257486DA0023AE2F /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		59649AE42575D23B006C7F23 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				23777DBD2574750B004DC36B /* BdayTableViewController.swift */,
 				5929E9DD257481B90023AE2F /* PersonDetailViewController.swift */,
 				5929E9E0257481C00023AE2F /* AddPersonViewController.swift */,
+				59649AE42575D23B006C7F23 /* WebViewController.swift */,
 				23777DD125747F09004DC36B /* Interest.swift */,
 				23777DC22574750B004DC36B /* BirthdayList.xcdatamodeld */,
 				5929E9E7257486DA0023AE2F /* Friend+CoreDataProperties.swift */,
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5929E9DB257481B20023AE2F /* PersonTableViewCell.swift in Sources */,
+				59649AE52575D23B006C7F23 /* WebViewController.swift in Sources */,
 				5929E9DE257481B90023AE2F /* PersonDetailViewController.swift in Sources */,
 				23777DC42574750B004DC36B /* BirthdayList.xcdatamodeld in Sources */,
 				23777DBE2574750B004DC36B /* BdayTableViewController.swift in Sources */,

@@ -118,7 +118,7 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
                         else {
                             // we are undwinding from an AddSegue
                             
-                            friends.append(trip)
+                            friends.append(friend)
                         }
                         // force update the table view
                         self.saveFriends()
