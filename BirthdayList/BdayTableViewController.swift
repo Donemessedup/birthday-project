@@ -83,8 +83,6 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
                     // pass the trip into detailDetailVC
                     if let indexPath = tableView.indexPathForSelectedRow {
                         let friend = friends[indexPath.row]
-    
-                        personDetailVC.friendIndex = indexPath.row + 1
                         personDetailVC.friendOptional = friend
                     }
                 }

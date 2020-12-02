@@ -13,7 +13,6 @@ import UIKit
 class PersonDetailViewController: UIViewController {
     let dateFormatter = DateFormatter()
     var friendOptional: Friend? = nil
-    var friendIndex: Int = 0
     
     @IBOutlet var destLabel: UILabel!
     @IBOutlet var startDateLabel: UILabel!
