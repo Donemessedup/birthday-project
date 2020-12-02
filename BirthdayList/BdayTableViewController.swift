@@ -87,14 +87,6 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
                     }
                 }
             }
-            else if identifier == "AddSegue" {
-                if let addPersonVC = segue.destination as? AddPersonViewController {
-                    if let indexPath = tableView.indexPathForSelectedRow {
-                        tableView.deselectRow(at: indexPath, animated: true)
-                        
-                    }
-                }
-            }
         }
     }
     
