@@ -14,7 +14,6 @@ class PersonTableViewCell: UITableViewCell {
     let dateFormatter = DateFormatter()
     @IBOutlet var destLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var tripImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
