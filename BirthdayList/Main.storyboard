@@ -230,6 +230,9 @@
                     <navigationItem key="navigationItem" id="3K1-yg-DVs"/>
                     <connections>
                         <outlet property="birthDateTextField" destination="6ER-3D-1bJ" id="UjD-OO-hrs"/>
+                        <outlet property="interest1TextField" destination="XAF-m9-bW2" id="6xO-lm-qvc"/>
+                        <outlet property="interest2TextField" destination="bXc-mR-3LR" id="ehr-Z8-0Kw"/>
+                        <outlet property="interest3TextField" destination="PSA-IR-cS2" id="I6H-pX-X8h"/>
                         <outlet property="nameTextField" destination="rlj-cA-moS" id="Bvy-PX-nbH"/>
                         <outlet property="saveButton" destination="t9A-ka-pCy" id="FXA-wX-Lco"/>
                     </connections>

@@ -30,7 +30,9 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var birthDateTextField: UITextField!
     @IBOutlet var saveButton: UIButton!
-    
+    @IBOutlet var interest1TextField: UITextField!
+    @IBOutlet var interest2TextField: UITextField!
+    @IBOutlet var interest3TextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,11 +61,12 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
         dateFormatter.dateFormat = "MM/dd/yyyy"
             if let identifier = segue.identifier {
                 if identifier == "SaveUnwindSegue" {
-                    if let name = nameTextField.text, let birthDate = dateFormatter.date(from: birthDateTextField.text ?? "Unknown"){
+                    if let name = nameTextField.text, let birthDate = dateFormatter.date(from: birthDateTextField.text ?? "Unknown"), let interest1 = interest1TextField.text, let interest2 = interest2TextField.text, let interest3 = interest3TextField.text{
                         if allCorrect {
                             if let friend = friendOptional {
                                 friend.name = name
                                 friend.birthday = birthDate
+                                friend.interests = "\(interest1) \(interest2) \(interest3)"
                             }
                                 saveFriend()
                         }
