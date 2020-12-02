@@ -69,17 +69,11 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     // MARK: Lab #20
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
-            friends.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            context.delete(friends[indexPath.row])
-            
-            // persist the deletion by saving the context
-            saveFriends()
-        }
+        context.delete(friends[indexPath.row])
+        saveFriends()
+        friends.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "DetailSegue" {
