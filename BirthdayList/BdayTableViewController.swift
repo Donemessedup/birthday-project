@@ -95,20 +95,11 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
             if identifier == "SaveUnwindSegue" {
                 if let addPersonVC = segue.source as? AddPersonViewController {
                     if let friend = addPersonVC.friendOptional {
-                        // get the currently selected index path
-                        if let indexPath = tableView.indexPathForSelectedRow {
-                            friends[indexPath.row] = friend
-                        }
-                        else {
-                            // we are undwinding from an AddSegue
-                            
-                            friends.append(friend)
-                        }
-                        // force update the table view
-                        self.saveFriends()
-                        tableView.reloadData()
+                        friends.append(friend)
                     }
                 }
+                saveFriends()
+                tableView.reloadData()
             }
         }
     }
