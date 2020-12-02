@@ -13,7 +13,6 @@
 		23777DC42574750B004DC36B /* BirthdayList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23777DC22574750B004DC36B /* BirthdayList.xcdatamodeld */; };
 		23777DC62574750C004DC36B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23777DC52574750C004DC36B /* Assets.xcassets */; };
 		23777DC92574750C004DC36B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23777DC72574750C004DC36B /* LaunchScreen.storyboard */; };
-		23777DD225747F09004DC36B /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23777DD125747F09004DC36B /* Interest.swift */; };
 		5929E9D7257481510023AE2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5929E9D6257481510023AE2F /* Main.storyboard */; };
 		5929E9DB257481B20023AE2F /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E9DA257481B20023AE2F /* PersonTableViewCell.swift */; };
 		5929E9DE257481B90023AE2F /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E9DD257481B90023AE2F /* PersonDetailViewController.swift */; };
@@ -32,7 +31,6 @@
 		23777DC52574750C004DC36B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23777DC82574750C004DC36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23777DCA2574750C004DC36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23777DD125747F09004DC36B /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		5929E9D6257481510023AE2F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5929E9DA257481B20023AE2F /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		5929E9DD257481B90023AE2F /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				5929E9DD257481B90023AE2F /* PersonDetailViewController.swift */,
 				5929E9E0257481C00023AE2F /* AddPersonViewController.swift */,
 				59649AE42575D23B006C7F23 /* WebViewController.swift */,
-				23777DD125747F09004DC36B /* Interest.swift */,
 				23777DC22574750B004DC36B /* BirthdayList.xcdatamodeld */,
 				5929E9E7257486DA0023AE2F /* Friend+CoreDataProperties.swift */,
 				5929E9E6257486DA0023AE2F /* Friend+CoreDataClass.swift */,
@@ -171,7 +168,6 @@
 				5929E9E1257481C00023AE2F /* AddPersonViewController.swift in Sources */,
 				5929E9E9257486DA0023AE2F /* Friend+CoreDataProperties.swift in Sources */,
 				23777DBC2574750B004DC36B /* SceneDelegate.swift in Sources */,
-				23777DD225747F09004DC36B /* Interest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
