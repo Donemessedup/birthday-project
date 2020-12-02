@@ -9,10 +9,13 @@
 //
 
 import UIKit
+import WebKit
 
 class PersonDetailViewController: UIViewController {
     let dateFormatter = DateFormatter()
     var friendOptional: Friend? = nil
+    let webView = WKWebView()
+    var urlVar = ""
     
     @IBOutlet var destLabel: UILabel!
     @IBOutlet var startDateLabel: UILabel!
@@ -57,5 +60,30 @@ class PersonDetailViewController: UIViewController {
             }
         }
 
+    }
+//    @IBAction func unwindToWebViewController(segue: UIStoryboardSegue) {
+//        if let identifier = segue.identifier {
+//            if identifier == "WebSegue" {
+//                if let webVC = segue.source as? WebViewController {
+//                    if let friend = webVC.friendOptional {
+//
+//                    }
+//                }
+//                saveFriends()
+//                tableView.reloadData()
+//            }
+//        }
+//    }
+    @IBAction func openWeb(sender: UIButton) {
+        self.view = webView
+        if let friend = friendOptional, let tempString = friend.interests {
+//            let interests = Interest(interestsString: friend.interests ?? "nothing")
+//            let interests = tempString.components(separatedBy: "* ")
+            urlVar = sender.currentTitle!
+            if let url = URL(string: "http://www.amazon.com/s?url=search-alias%3Daps&field-keywords="+urlVar) {
+                let request = URLRequest(url: url)
+                webView.load(request)
+            }
+    }
     }
 }

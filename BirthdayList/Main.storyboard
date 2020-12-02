@@ -289,14 +289,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1t7-Bg-Muj">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="30"/>
                                                 <state key="normal" title="Int1"/>
+                                                <connections>
+                                                    <action selector="openWebWithSender:" destination="G91-1M-YWY" eventType="touchUpInside" id="EBZ-bN-3bT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMl-IH-BrP">
                                                 <rect key="frame" x="0.0" y="49" width="382" height="30"/>
                                                 <state key="normal" title="int2"/>
+                                                <connections>
+                                                    <action selector="openWebWithSender:" destination="G91-1M-YWY" eventType="touchUpInside" id="1qW-MB-958"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFs-S9-A5n">
                                                 <rect key="frame" x="0.0" y="98" width="382" height="30"/>
                                                 <state key="normal" title="int3"/>
+                                                <connections>
+                                                    <action selector="openWebWithSender:" destination="G91-1M-YWY" eventType="touchUpInside" id="7MW-uk-ORH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -343,6 +352,7 @@
                         <viewLayoutGuide key="safeArea" id="Gcz-fN-4e0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5dR-0n-NN8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiS-2F-oWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
