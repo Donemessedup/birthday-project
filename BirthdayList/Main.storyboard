@@ -44,6 +44,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="R8p-IO-9LL" id="rMZ-CF-tap"/>
+                                            <outlet property="destLabel" destination="O6a-F4-3yv" id="vXc-9e-RLm"/>
                                             <segue destination="G91-1M-YWY" kind="show" identifier="DetailSegue" id="JGH-Qz-3gM"/>
                                         </connections>
                                     </tableViewCell>
@@ -255,13 +257,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip 1 of 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13s-XT-N6F">
-                                <rect key="frame" x="16" y="104" width="382" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wWW-rD-SkH">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wWW-rD-SkH">
                                 <rect key="frame" x="16" y="132.5" width="73" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-eu-CDc">
@@ -282,19 +278,13 @@
                         <viewLayoutGuide key="safeArea" id="Yzz-Sd-zvI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="13s-XT-N6F" firstAttribute="top" secondItem="Yzz-Sd-zvI" secondAttribute="top" constant="16" id="6oK-4i-YcG"/>
-                            <constraint firstItem="13s-XT-N6F" firstAttribute="top" secondItem="Yzz-Sd-zvI" secondAttribute="top" constant="16" id="PvY-v9-foy"/>
-                            <constraint firstItem="Yzz-Sd-zvI" firstAttribute="trailing" secondItem="13s-XT-N6F" secondAttribute="trailing" constant="16" id="bN0-Lp-TlE"/>
                             <constraint firstItem="wWW-rD-SkH" firstAttribute="leading" secondItem="Yzz-Sd-zvI" secondAttribute="leading" constant="16" id="cOW-me-Z0k"/>
-                            <constraint firstItem="wWW-rD-SkH" firstAttribute="top" secondItem="13s-XT-N6F" secondAttribute="bottom" constant="8" id="loP-wR-7ee"/>
-                            <constraint firstItem="13s-XT-N6F" firstAttribute="leading" secondItem="Yzz-Sd-zvI" secondAttribute="leading" constant="16" id="qPh-xT-EVH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x8i-J0-PdU"/>
                     <connections>
                         <outlet property="destLabel" destination="tcJ-eu-CDc" id="iXE-op-GkT"/>
                         <outlet property="startDateLabel" destination="XBe-9i-393" id="MqX-mS-0Yd"/>
-                        <outlet property="tripNumLabel" destination="13s-XT-N6F" id="0Xd-eK-u97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAU-xM-yCl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

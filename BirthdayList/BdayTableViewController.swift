@@ -89,7 +89,7 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
                     // pass the trip into detailDetailVC
                     if let indexPath = tableView.indexPathForSelectedRow {
                         let friend = friends[indexPath.row]
-                        personDetailVC.totalNumTrips = friends.count
+    
                         personDetailVC.friendIndex = indexPath.row + 1
                         personDetailVC.friendOptional = friend
                     }
@@ -99,7 +99,7 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
                 if let addPersonVC = segue.destination as? AddPersonViewController {
                     if let indexPath = tableView.indexPathForSelectedRow {
                         tableView.deselectRow(at: indexPath, animated: true)
-                        addPersonVC.tripNum = friends.count + 1
+                        
                     }
                 }
             }

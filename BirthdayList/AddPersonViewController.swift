@@ -16,16 +16,16 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let dateFormatter = DateFormatter()
     var friendOptional: Friend? = nil
-    var tripNum: Int = 1
-    let alert = UIAlertController(title: "Error", message: "Missing destination", preferredStyle: .alert)
-    let startDateAlert = UIAlertController(title: "Error", message: "Invalid start date", preferredStyle: .alert)
-    let endDateAlert = UIAlertController(title: "Error", message: "Invalid end date", preferredStyle: .alert)
-    let continueAction = UIAlertAction(title: "Continue", style: .cancel, handler: nil)
-    let addImageAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-    var imageAdded = false
+//    var tripNum: Int = 1
+//    let alert = UIAlertController(title: "Error", message: "Missing destination", preferredStyle: .alert)
+//    let startDateAlert = UIAlertController(title: "Error", message: "Invalid start date", preferredStyle: .alert)
+//    let endDateAlert = UIAlertController(title: "Error", message: "Invalid end date", preferredStyle: .alert)
+//    let continueAction = UIAlertAction(title: "Continue", style: .cancel, handler: nil)
+//    let addImageAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//    var imageAdded = false
     var allCorrect = true
-    var imageFileName = ""
-    var image: UIImage? = nil
+
+   
     
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var birthDateTextField: UITextField!
@@ -38,10 +38,10 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        alert.addAction(continueAction)
-        startDateAlert.addAction(continueAction)
-        endDateAlert.addAction(continueAction)
-        addImageAlert.addAction(continueAction)
+//        alert.addAction(continueAction)
+//        startDateAlert.addAction(continueAction)
+//        endDateAlert.addAction(continueAction)
+//        addImageAlert.addAction(continueAction)
 
     }
 
