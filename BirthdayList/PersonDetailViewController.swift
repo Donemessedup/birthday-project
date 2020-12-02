@@ -17,21 +17,38 @@ class PersonDetailViewController: UIViewController {
     
     @IBOutlet var destLabel: UILabel!
     @IBOutlet var startDateLabel: UILabel!
-
+    @IBOutlet var interest1Button: UIButton!
+    @IBOutlet var interest2Button: UIButton!
+    @IBOutlet var interest3Button: UIButton!
    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        displayTrip()
+        displayFriend()
     }
 //displays the name, dates ,and image of the trip
-    func displayTrip() {
+    func displayFriend() {
         dateFormatter.dateFormat = "MM/dd/yyyy"
-        if let friend = friendOptional, let personName = friend.name, let birthDate = friend.birthday {
+        
+        if let friend = friendOptional, let personName = friend.name, let birthDate = friend.birthday, let tempString = friend.interests {
             destLabel.text = "Name: " + personName
+            let interests = tempString.components(separatedBy: "* ")
+            interest1Button.setTitle(interests[0], for: .normal)
+            self.interest2Button.isHidden = true
+            self.interest3Button.isHidden = true
+            if interests.count == 2 {
+                interest2Button.setTitle(interests[1], for: .normal)
+                self.interest2Button.isHidden = false
 
+            }
+            if interests.count == 3 {
+                interest2Button.setTitle(interests[1], for: .normal)
+                interest3Button.setTitle(interests[2], for: .normal)
+                self.interest2Button.isHidden = false
+                self.interest3Button.isHidden = false
+            }
             if let bDate = birthDate as Date? {
                 startDateLabel.text = "Start Date: \(dateFormatter.string(from: bDate))"
             }

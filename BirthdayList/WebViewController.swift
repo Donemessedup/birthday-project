@@ -26,7 +26,7 @@ class WebViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let friend = friendOptional {
 //            let interests = Interest(interestsString: friend.interests ?? "nothing")
-            let interests = friend.interests!.components(separatedBy: " ")
+            let interests = friend.interests!.components(separatedBy: "* ")
             urlVar = interests[interestNum]
             if let url = URL(string: "http://www.amazon.com/s?url=search-alias%3Daps&field-keywords="+urlVar) {
                 let request = URLRequest(url: url)

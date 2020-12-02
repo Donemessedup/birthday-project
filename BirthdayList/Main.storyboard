@@ -274,6 +274,30 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click on an interest:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgU-lg-5UJ">
+                                <rect key="frame" x="31" y="221" width="150" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="aO2-Vz-lYL">
+                                <rect key="frame" x="31" y="271" width="30" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1t7-Bg-Muj">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="Int1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMl-IH-BrP">
+                                        <rect key="frame" x="0.0" y="49" width="30" height="30"/>
+                                        <state key="normal" title="int2"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFs-S9-A5n">
+                                        <rect key="frame" x="0.0" y="98" width="30" height="30"/>
+                                        <state key="normal" title="int3"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yzz-Sd-zvI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -284,6 +308,9 @@
                     <navigationItem key="navigationItem" id="x8i-J0-PdU"/>
                     <connections>
                         <outlet property="destLabel" destination="tcJ-eu-CDc" id="iXE-op-GkT"/>
+                        <outlet property="interest1Button" destination="1t7-Bg-Muj" id="nvf-QA-Bla"/>
+                        <outlet property="interest2Button" destination="lMl-IH-BrP" id="rJi-eG-A8s"/>
+                        <outlet property="interest3Button" destination="DFs-S9-A5n" id="udc-zQ-w87"/>
                         <outlet property="startDateLabel" destination="XBe-9i-393" id="MqX-mS-0Yd"/>
                     </connections>
                 </viewController>

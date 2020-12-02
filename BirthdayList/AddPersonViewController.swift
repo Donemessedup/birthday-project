@@ -66,7 +66,8 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
                             if let friend = friendOptional {
                                 friend.name = name
                                 friend.birthday = birthDate
-                                friend.interests = "\(interest1) \(interest2) \(interest3)"
+                                friend.interests = "\(interest1)* \(interest2)* \(interest3)* "
+                                print(friend.interests!)
                             }
                                 saveFriend()
                         }
