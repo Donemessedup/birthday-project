@@ -11,7 +11,7 @@
 import UIKit
 import WebKit
 
-class PersonDetailViewController: UIViewController {
+class PersonDetailViewController: UIViewController, WKNavigationDelegate {
     let dateFormatter = DateFormatter()
     var friendOptional: Friend? = nil
     let webView = WKWebView()
@@ -56,34 +56,63 @@ class PersonDetailViewController: UIViewController {
             }
            
             if let bDate = birthDate as Date? {
-                startDateLabel.text = "Start Date: \(dateFormatter.string(from: bDate))"
+                startDateLabel.text = "Birthdate: \(dateFormatter.string(from: bDate))"
             }
         }
 
     }
-//    @IBAction func unwindToWebViewController(segue: UIStoryboardSegue) {
-//        if let identifier = segue.identifier {
-//            if identifier == "WebSegue" {
-//                if let webVC = segue.source as? WebViewController {
-//                    if let friend = webVC.friendOptional {
-//
-//                    }
-//                }
-//                saveFriends()
-//                tableView.reloadData()
-//            }
-//        }
-//    }
+
+    @IBAction func prevBtn(_ sender: UIBarButtonItem) {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+
+    @IBAction func nextBtn(_ sender: UIBarButtonItem) {
+        if webView.canGoForward {
+            webView.goForward()
+        }
+    }
+    
     @IBAction func openWeb(sender: UIButton) {
         self.view = webView
+        
+        webView.navigationDelegate = self
+        
         if let friend = friendOptional, let tempString = friend.interests {
-//            let interests = Interest(interestsString: friend.interests ?? "nothing")
-//            let interests = tempString.components(separatedBy: "* ")
+
             urlVar = sender.currentTitle!
             if let url = URL(string: "http://www.amazon.com/s?url=search-alias%3Daps&field-keywords="+urlVar) {
                 let request = URLRequest(url: url)
                 webView.load(request)
             }
+        }
     }
-    }
+    
+    
+    
+//    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!)
+//    {
+//        print(#function)
+//    }
+//
+//    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!)
+//    {
+//        print(#function)
+//    }
+//
+//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!)
+//    {
+//        print(#function)
+//    }
+//
+//    func webView(_ webView: WKWebView, didFailwithError navigation: WKNavigation!)
+//    {
+//        print(#function)
+//    }
+//
+//    func webView(_ webView: WKWebView, didFailProvisionalNavigationwithError navigation: WKNavigation!)
+//    {
+//        print(#function)
+//    }
 }

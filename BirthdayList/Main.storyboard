@@ -329,7 +329,20 @@
                             <constraint firstItem="x6n-rA-eaw" firstAttribute="top" secondItem="wWW-rD-SkH" secondAttribute="bottom" constant="16" id="vHW-OO-sO8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="x8i-J0-PdU"/>
+                    <navigationItem key="navigationItem" id="x8i-J0-PdU">
+                        <rightBarButtonItems>
+                            <barButtonItem title="&gt;" id="fms-tN-1ab">
+                                <connections>
+                                    <action selector="nextBtn:" destination="G91-1M-YWY" id="41J-LQ-qKS"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="&lt;" id="Rjj-0F-51v">
+                                <connections>
+                                    <action selector="prevBtn:" destination="G91-1M-YWY" id="KNd-s4-XXw"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="destLabel" destination="tcJ-eu-CDc" id="iXE-op-GkT"/>
                         <outlet property="interest1Button" destination="1t7-Bg-Muj" id="nvf-QA-Bla"/>
