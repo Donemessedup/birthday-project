@@ -34,8 +34,8 @@ class PersonDetailViewController: UIViewController, WKNavigationDelegate {
     func displayFriend() {
         dateFormatter.dateFormat = "MM/dd/yyyy"
         
-        if let friend = friendOptional, let personName = friend.name, let birthDate = friend.birthday, let tempString = friend.interests {
-            destLabel.text = "Name: " + personName
+        if let friend = friendOptional, let birthDate = friend.birthday, let tempString = friend.interests {
+            destLabel.text = "Name: " + friend.name
             let interests = tempString.components(separatedBy: "* ")
             print(interests.count)
             print("\(interests)")

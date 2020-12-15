@@ -23,7 +23,11 @@ class BdayTableViewController: UIViewController, UITableViewDataSource, UITableV
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let dateFormatter = DateFormatter()
-    var friends = [Friend]()
+    var friends = [Friend]() {
+        didSet {
+            friends.sort {$0.name < $1.name }
+        }
+    }
     
     
     @IBOutlet var tableView: UITableView!
