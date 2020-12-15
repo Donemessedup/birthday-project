@@ -16,13 +16,10 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let dateFormatter = DateFormatter()
     var friendOptional: Friend? = nil
-//    var tripNum: Int = 1
-//    let alert = UIAlertController(title: "Error", message: "Missing destination", preferredStyle: .alert)
-//    let startDateAlert = UIAlertController(title: "Error", message: "Invalid start date", preferredStyle: .alert)
-//    let endDateAlert = UIAlertController(title: "Error", message: "Invalid end date", preferredStyle: .alert)
-//    let continueAction = UIAlertAction(title: "Continue", style: .cancel, handler: nil)
-//    let addImageAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-//    var imageAdded = false
+    let alert = UIAlertController(title: "Error", message: "Missing Name", preferredStyle: .alert)
+    let dateAlert = UIAlertController(title: "Error", message: "Invalid date", preferredStyle: .alert)
+    let continueAction = UIAlertAction(title: "Continue", style: .cancel, handler: nil)
+
     var allCorrect = true
 
    
@@ -38,11 +35,8 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        alert.addAction(continueAction)
-//        startDateAlert.addAction(continueAction)
-//        endDateAlert.addAction(continueAction)
-//        addImageAlert.addAction(continueAction)
-
+        alert.addAction(continueAction)
+        dateAlert.addAction(continueAction)
     }
 
 /*dismisses thew keyboard when the background is tapped */
@@ -78,13 +72,30 @@ class AddPersonViewController: UIViewController, UINavigationControllerDelegate,
 /*checks if all input is valid, if not then displays an alert
  */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        checkDest()
         if allCorrect {
             return true
         }
         return false
     }
     
+    func checkDest(){
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let date = dateFormatter.date(from: birthDateTextField.text ?? "Unknown")
+        if nameTextField.text == "" {
+            present(alert,animated: true)
+            allCorrect = false
+            return
+        }
+        if date == nil {
+            present(dateAlert, animated: true)
+            allCorrect = false
+            return
+        }
 
+        allCorrect = true
+    }
+    
     func saveFriend() {
         // we want to save the context "to disk" (db)
         do {
