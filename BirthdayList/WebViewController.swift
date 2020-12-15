@@ -28,7 +28,10 @@ class WebViewController: UIViewController {
 //            let interests = Interest(interestsString: friend.interests ?? "nothing")
             let interests = friend.interests!.components(separatedBy: "* ")
             urlVar = interests[interestNum]
-            if let url = URL(string: "http://www.amazon.com/s?url=search-alias%3Daps&field-keywords="+urlVar) {
+            var urlString = "http://www.amazon.com/s?url=search-alias%3Daps&field-keywords="
+            urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            print(urlString)
+            if let url = URL(string: urlString + urlVar) {
                 let request = URLRequest(url: url)
                 webView.load(request)
             }

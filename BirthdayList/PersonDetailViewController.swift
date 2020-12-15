@@ -45,14 +45,12 @@ class PersonDetailViewController: UIViewController, WKNavigationDelegate {
             if interests.count == 2 {
                 interest2Button.setTitle(interests[1], for: .normal)
                 self.interest2Button.isHidden = false
-                print("succses")
             }
             if interests.count == 3 {
                 interest2Button.setTitle(interests[1], for: .normal)
                 interest3Button.setTitle(interests[2], for: .normal)
                 self.interest2Button.isHidden = false
                 self.interest3Button.isHidden = false
-                print("sdfsa")
             }
            
             if let bDate = birthDate as Date? {
@@ -82,7 +80,9 @@ class PersonDetailViewController: UIViewController, WKNavigationDelegate {
         if let friend = friendOptional, let tempString = friend.interests {
 
             urlVar = sender.currentTitle!
-            if let url = URL(string: "http://www.amazon.com/s?url=search-alias%3Daps&field-keywords="+urlVar) {
+            var urlString = "http://www.amazon.com/s?url=search-alias%3Daps&field-keywords=" + urlVar
+            urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            if let url = URL(string: urlString ) {
                 let request = URLRequest(url: url)
                 webView.load(request)
             }
